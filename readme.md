@@ -4,11 +4,11 @@ Install apt packages with `bai package(s)`
 
 *Requires Linux environment with apt package manager. (obviously)*
 
-> Note: Piping to the shell can be dangerous. It’s always a good idea to check the [source](install.sh) first.
+> Note: Piping to the shell can be dangerous. It’s always a good idea to check the source first.
 
 ## Try
 ```bash
-wget -q -O - file.efmeeks.net/bai/master/bai.sh | bash
+wget -q -O - file.efmeeks.net/bai/master/bai-demo.sh | bash
 ```
 
 ## Install
