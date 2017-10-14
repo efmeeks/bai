@@ -3,8 +3,8 @@
 # Better Apt Installer
 # http://git.efmeeks.net/bai
 
-[ -z $(which apt) ] && echo "apt is missing" && exit
-[ -z $(which apt-get) ] && echo "apt-get is missing" && exit
+#[ -z $(which apt) ] && echo "apt is missing" && exit
+#[ -z $(which apt-get) ] && echo "apt-get is missing" && exit
 
 getbai() {
   setprofile(){
@@ -29,14 +29,13 @@ getbai() {
   }
   doinstall() {
     mkdir -p ~/bin
-    wget -q -O ~/bin/bai http://file.efmeeks.net/bai/master/install.sh
+    wget -q -O ~/bin/bai http://file.efmeeks.net/bai/master/bai.sh
     chmod +x ~/bin/*
   }
   setprofile
   setpath
   doinstall
 }
-
 usage() {
   cat << eof
   
@@ -52,7 +51,6 @@ usage() {
 
 eof
 }
-
 pre() {
   # am i root?
   if [ "$(whoami)" != "root" ]; then
@@ -61,14 +59,12 @@ pre() {
     apt="apt-get"
   fi
 }
-
 update() {
   pre
   $apt update
   $apt upgrade -y
   $apt autoremove -y
 }
-
 install() {
   if [ "$2" == "bai" ]; then
     getbai
@@ -80,7 +76,6 @@ install() {
     $apt install -y "${@:2}"
   fi
 }
-
 remove() {
   if [ "$2" == "bai" ]; then
     [ -n "$(which bai)" ] && rm $(which bai)
@@ -93,7 +88,6 @@ remove() {
     $apt remove --purge "${@:2}"
   fi
 }
-
 search() {
   if [ -z "$2" ]; then
     echo 'Nothing to search for. See `bai help`'
@@ -103,6 +97,7 @@ search() {
   fi
 }
 
+[ "$1" == "test" ] && echo "Hello, World!"
 [ "$1" == "s" -o "$1" == "search" ] && search "$@"
 [ "$1" == "u" -o "$1" == "update" ] && update
 [ "$1" == "i" -o "$1" == "install" ] && install "$@"
