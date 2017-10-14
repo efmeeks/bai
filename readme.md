@@ -6,10 +6,10 @@ Install apt packages with `bai package(s)`
 
 ## Install
 ```
-wget -q -O - https://git.io/vdiYj | bash
+wget -q -O - http://file.efmeeks.net/bai/master/install.sh | bash
 ```
 
-> Piping to the shell can be dangerous. It’s always a good idea to check the [source](#source) first.
+> Piping to the shell can be dangerous. It’s always a good idea to check the [source](install.sh) first.
 
 ## Usage
 ```
@@ -30,7 +30,7 @@ Commands:   [h]elp    | Show help message
 #!/bin/bash
 
 # Better Apt Installer
-# https://git.io/vdimV
+# 
 
 usage() {
   cat << eof

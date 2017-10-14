@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Better Apt Installer
-# https://git.io/vdimV
+# http://git.efmeeks.net/bai
 
 usage() {
   cat << eof

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Better Apt Installer
-# https://git.io/vdimV
+# http://git.efmeeks.net/bai
 
 # Installer for bai
 
@@ -34,7 +34,7 @@ setpath() {
 
 doinstall() {
   mkdir -p ~/bin
-  wget -q -O ~/bin/bai https://git.io/vdis9
+  wget -q -O ~/bin/bai http://file.efmeeks.net/bai/master/install.sh
   chmod +x ~/bin/*
 }
 
