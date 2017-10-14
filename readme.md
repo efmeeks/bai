@@ -4,16 +4,22 @@ Install apt packages with `bai package(s)`
 
 *Requires Linux environment with apt package manager. (obviously)*
 
-## Install
-```
-wget -q -O - http://file.efmeeks.net/bai/master/install.sh | bash
+> Note: Piping to the shell can be dangerous. It’s always a good idea to check the [source](install.sh) first.
+
+## Try
+```bash
+wget -q -O - file.efmeeks.net/bai/master/bai.sh | bash
 ```
 
-> Piping to the shell can be dangerous. It’s always a good idea to check the [source](install.sh) first.
+## Install
+```bash
+wget -q -O - file.efmeeks.net/bai/master/install.sh | bash
+```
 
 ## Usage
 ```
 Better Apt Installer
+http://git.efmeeks.net/bai
 
 Usage:      bai <command> package(s)
 
@@ -30,14 +36,14 @@ Commands:   [h]elp    | Show help message
 #!/bin/bash
 
 # Better Apt Installer
-# 
+# http://git.efmeeks.net/bai
 
 usage() {
   cat << eof
   
   Better Apt Installer
   
-  Usage:      bai [command] package(s)
+  Usage:      bai <command> package(s)
   
   Commands:   [h]elp    | Show help message
               [u]pdate  | Update, upgrade, and cleanup packages
