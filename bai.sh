@@ -97,7 +97,7 @@ search() {
   fi
 }
 
-[ "$1" == "test" ] && echo "Hello, World!"
+[ "$1" == "test" ] && echo "Hello, World!" && exit
 [ "$1" == "s" -o "$1" == "search" ] && search "$@"
 [ "$1" == "u" -o "$1" == "update" ] && update
 [ "$1" == "i" -o "$1" == "install" ] && install "$@"
