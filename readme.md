@@ -9,11 +9,11 @@ Install apt packages with `bai package(s)`
 ## Try
 cURL
 ```bash
-bash <(curl -sL file.efmeeks.net/bai/master/bai.sh) demo
+bash <(curl -sL file.efmeeks.net/bai/master/bai.sh) #command goes here (defaults to help)
 ```
 wget
 ```bash
-bash <(wget -q -O - file.efmeeks.net/bai/master/bai.sh) demo
+bash <(wget -q -O - file.efmeeks.net/bai/master/bai.sh) #command goes here (defaults to help)
 ```
 
 ## Install

@@ -3,16 +3,16 @@
 # Better Apt Installer
 # http://git.efmeeks.net/bai
 
-#[ -z $(which apt) ] && echo "apt is missing" && exit
-#[ -z $(which apt-get) ] && echo "apt-get is missing" && exit
-
+[ -z $(which apt) ] && echo "apt is missing" && exit
+[ -z $(which apt-get) ] && echo "apt-get is missing" && exit
+    
 getbai() {
   setprofile(){
     while [ -z $PROFILE ]; do
-      [ -e ~/.bashrc ] && PROFILE="${HOME}/.bashrc" && break
-      [ -e ~/.profile ] && PROFILE="${HOME}/.profile" && break
-      [ -e ~/.bash_profile ] && PROFILE="${HOME}/.bash_profile" && break
-      [ -e /etc/profile ] && PROFILE="/etc/profile" && break
+      [ -e /etc/profile ] && PROFILE="/etc/profile"
+      [ -e ~/.bash_profile ] && PROFILE="${HOME}/.bash_profile"
+      [ -e ~/.profile ] && PROFILE="${HOME}/.profile"
+      [ -e ~/.bashrc ] && PROFILE="${HOME}/.bashrc"
       PROFILE="${HOME}/.bashrc"
     done
   }
@@ -42,6 +42,7 @@ usage() {
   Better Apt Installer
   
   Usage:      bai <command> package(s)
+  
   Commands:   [h]elp    | Show help message
               [u]pdate  | Update, upgrade, and cleanup packages
               [i]nstall | (Optional) Install the following package(s)
@@ -50,6 +51,7 @@ usage() {
               [s]earch  | Search for packages
 
 eof
+exit
 }
 pre() {
   # am i root?
@@ -75,6 +77,7 @@ install() {
     pre
     $apt install -y "${@:2}"
   fi
+  exit
 }
 remove() {
   if [ "$2" == "bai" ]; then
@@ -87,6 +90,7 @@ remove() {
     pre
     $apt remove --purge "${@:2}"
   fi
+  exit
 }
 search() {
   if [ -z "$2" ]; then
@@ -95,9 +99,9 @@ search() {
     pre
     $apt search "${@:2}"
   fi
+  exit
 }
 
-[ "$1" == "test" ] && echo "Hello, World!" && exit
 [ "$1" == "s" -o "$1" == "search" ] && search "$@"
 [ "$1" == "u" -o "$1" == "update" ] && update
 [ "$1" == "i" -o "$1" == "install" ] && install "$@"
