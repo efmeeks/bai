@@ -4,16 +4,26 @@ Install apt packages with `bai package(s)`
 
 *Requires Linux environment with apt package manager. (obviously)*
 
-> Note: Piping to the shell can be dangerous. It’s always a good idea to check the source first.
+> Note: Redirecting scripts directly to the shell *can* be dangerous. It's a good idea to check [the source](./bai.sh) first.
 
 ## Try
+cURL
 ```bash
-wget -q -O - file.efmeeks.net/bai/master/bai-demo.sh | bash
+bash <(curl -sL file.efmeeks.net/bai/master/bai.sh) demo
+```
+wget
+```bash
+bash <(wget -q -O - file.efmeeks.net/bai/master/bai.sh) demo
 ```
 
 ## Install
+cURL
 ```bash
-wget -q -O - file.efmeeks.net/bai/master/install.sh | bash
+bash <(curl -sL file.efmeeks.net/bai/master/bai.sh) install bai
+```
+wget
+```bash
+bash <(wget -q -O - file.efmeeks.net/bai/master/bai.sh) install bai
 ```
 
 ## Usage
