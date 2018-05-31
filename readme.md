@@ -9,27 +9,27 @@ Install apt packages with `bai package(s)`
 ## Try
 cURL
 ```bash
-bash <(curl -sL file.efmeeks.net/bai/master/bai.sh) #command goes here (defaults to help)
+bash <(curl -sL https://raw.githubusercontent.com/efmks/bai/master/bai.sh) #command goes here (defaults to help)
 ```
 wget
 ```bash
-bash <(wget -q -O - file.efmeeks.net/bai/master/bai.sh) #command goes here (defaults to help)
+bash <(wget -q -O - https://raw.githubusercontent.com/efmks/bai/master/bai.sh) #command goes here (defaults to help)
 ```
 
 ## Install
 cURL
 ```bash
-bash <(curl -sL file.efmeeks.net/bai/master/bai.sh) install bai
+bash <(curl -sL https://raw.githubusercontent.com/efmks/bai/master/bai.sh) install bai
 ```
 wget
 ```bash
-bash <(wget -q -O - file.efmeeks.net/bai/master/bai.sh) install bai
+bash <(wget -q -O - https://raw.githubusercontent.com/efmks/bai/master/bai.sh) install bai
 ```
 
 ## Usage
 ```
 Better Apt Installer
-http://git.efmeeks.net/bai
+https://github.com/efmks/bai
 
 Usage:      bai <command> package(s)
 

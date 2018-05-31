@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Better Apt Installer
-# http://git.efmeeks.net/bai
 
 [ -z $(which apt) ] && echo "apt is missing" && exit
 [ -z $(which apt-get) ] && echo "apt-get is missing" && exit
